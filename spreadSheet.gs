@@ -6,9 +6,9 @@ function getResults() {
 function getRecords(range) {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = spreadsheet.getSheetByName("フォームの回答 1");
-  var range = sheet.getRange(range).getValues();
+  var records = sheet.getRange(range).getValues();
 
-  return range.filter(function(x) {
+  return records.filter(function(x) {
     return x[2] != "";
   });
 }
