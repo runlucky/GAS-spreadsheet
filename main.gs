@@ -1,5 +1,5 @@
 function update(event) {
-  var header = '<div style="text-align: center; font-size: 30px;">'
+  var header = '<div style="font-size:50px; margin-bottom: 30px;text-align: center;">結果発表！</div><div style="font-size: 30px;text-align: center;margin-bottom:50px;">'
   var ranking = getResults().map(toHtml).reduce(reduce)
   var footer = "</div><div>" + formatTime() + "</div>"
 
@@ -16,8 +16,8 @@ function toHtml(row, index) {
 }
 
 function getHeader(index){
-  if (index < 4) return '<div>'; // 8
-  if (index < 5) return '<div style="font-size: 25px; color: gray; margin-top: 40px">';
+  if (index < 8) return '<div>'; // 8
+  if (index < 9) return '<div style="font-size: 25px; color: gray; margin-top: 40px">';
   return '<div style="font-size: 25px; color: gray">';
 }
 
