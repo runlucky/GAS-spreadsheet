@@ -1,9 +1,16 @@
 function update(event) {
   var header = '<div style="font-size:50px; margin-bottom: 30px;text-align: center;">結果発表！</div><div style="font-size: 30px;text-align: center;margin-bottom:50px;">'
-  var ranking = getResults().map(toHtml).reduce(reduce)
+  var ranking = getRanking()
   var footer = "</div><div>" + formatTime() + "</div>"
 
   setContent(header + ranking + footer);  
+}
+
+function getRanking(){
+  var temp = getResults()
+  if (temp.length == 0) { return "<div>まだ誰も回答していません…</div>" }
+  var ranking = results.map(toHtml).reduce(reduce)
+  return ranking
 }
 
 function toHtml(row, index) {
