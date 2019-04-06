@@ -7,8 +7,8 @@ function update(event) {
 }
 
 function getRanking(){
-  var temp = getResults()
-  if (temp.length == 0) { return "<div>まだ誰も回答していません…</div>" }
+  var results = getResults()
+  if (results.length == 0) { return "<div>まだ誰も回答していません…</div>" }
   var ranking = results.map(toHtml).reduce(reduce)
   return ranking
 }
